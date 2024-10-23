@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PEDIDOS CONCLUIDOS</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/style-pedidos.css" />
+    <!-- <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: "Poppins", sans-serif;
+      }
+      .header {
+        display: flex;
+        flex-direction: row;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background-color: #f8f8f8;
+        padding: 10px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        justify-content: space-between;
+        color: rgb(115, 115, 255);
+      }
+
+      .btn {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 20px;
+        padding: 10px 20px;
+        background-color: red;
+        color: white;
+        text-decoration: none;
+        border-radius: 10px;
+      }
+
+      .navbar {
+        position: sticky;
+        display: flex;
+        margin: 0;
+        padding: 0;
+        background-color: white;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        transition: color 0.3s ease;
+        justify-content: space-around;
+      }
+
+      .navbar a {
+        background-color: transparent;
+        border-style: none;
+        font-size: medium;
+        color: rgb(115, 115, 255);
+        text-decoration: none;
+      }
+
+      .navbar a.active {
+        text-decoration: underline; /* Adiciona sublinhado ao link ativo */
+        font-weight: bold; /* Opcional: para destacar ainda mais o link ativo */
+      }
+
+      .pedido {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin: 20px;
+      }
+
+      .infos {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .infos h2,
+      .infos h3 {
+        margin: 0;
+      }
+
+      .botoes {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .botoes button {
+        color: #fff;
+        border: none;
+        padding: 10px;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+        flex: 1;
+        margin: 0 5px;
+        text-align: center;
+      }
+
+      .botoes button:hover {
+        background-color: #0056b3;
+      }
+    </style> -->
+  </head>
+  <body>
+    <div class="header">
+      <h1>PEDIDOS</h1>
+      <a href="/delivery/loja" class="btn">VOLTAR</a>
+    </div>
+
+    <div class="navbar">
+      <a href="/delivery/pedidos?status=false">Pedidos pendentes</a>
+      <a href="/delivery/pedidos?status=true" class="active">Pedidos concluídos</a>
+    </div>
+
+    <div class="container-pedidos">
+      <% pedidos.forEach(pedido => { %>
+      <div class="pedido">
+        <div class="infos">
+          <h2>PEDIDO N°: <%= pedido.idPedido %></h2>
+          <h4>STATUS: <%= pedido.status ? 'Concluído' : 'Pendente' %></h4>
+        </div>
+        <div class="botoes">
+          <button style="background-color: rgb(70, 151, 70)">MUDAR STATUS</button>
+          <button style="background-color: rgb(114, 129, 0)" onclick="toggleModal('<%=pedido.idPedido%>')">DETALHES</button>
+          <button style="background-color: rgb(165, 0, 0)">IMPRIMIR</button>
+        </div>
+      </div>
+      <% }); %>
+    </div>
+
+    <div id="modal" class="hide"></div>
+
+    <script src="/javascript/script-pedidos-concluidos.js"></script>
+  </body>
+</html>

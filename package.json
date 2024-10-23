@@ -1,0 +1,27 @@
+{
+  "name": "delivery",
+  "version": "1.0.0",
+  "description": "Aplicativo de delivery para portfólio de Davi Maltus",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.3",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.21.1",
+    "express-session": "^1.18.1",
+    "mongoose": "^8.7.2",
+    "mongoose-sequence": "^6.0.1",
+    "multer": "^1.4.5-lts.1",
+    "mysql2": "^3.11.3",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7"
+  }
+}

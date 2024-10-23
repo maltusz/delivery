@@ -1,0 +1,157 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  top: 0;
+  width: 100%;
+  background-color: #f8f8f8;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  justify-content: space-between;
+  color: rgb(115, 115, 255);
+  box-sizing: border-box;
+  margin-bottom: 0.3rem;
+}
+
+.btn {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 10px 20px;
+  background-color: red;
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+}
+
+.navbar {
+  position: sticky;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: color 0.3s ease;
+  justify-content: space-around;
+}
+
+.navbar a {
+  background-color: transparent;
+  border-style: none;
+  font-size: medium;
+  color: rgb(115, 115, 255);
+  text-decoration: none;
+}
+
+.navbar a.active {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.pedido {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+}
+
+.infos {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.2rem;
+  text-align: left;
+  padding: 0;
+}
+
+.infos h3,
+.infos h4 {
+  margin: 0;
+}
+
+.botoes {
+  display: flex;
+  flex-direction: row;
+}
+
+.botoes button {
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+  flex: 1;
+  margin: 0 5px;
+  text-align: center;
+}
+
+.botoes button:hover {
+  background-color: #0056b3;
+}
+
+#modal {
+  display: flex;
+  transition: opacity 1s ease-in-out, visibility 1s ease-in-out, display 1s ease-in-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  flex-direction: column;
+  box-sizing: border-box;
+  overflow-y: auto;
+  opacity: 1;
+  visibility: visible;
+  height: 100vh;
+  z-index: 9999;
+  background-color: white;
+}
+
+#modal.hide {
+  transition: opacity 1s ease-in-out, visibility 1s ease-in-out, display 1s ease-in-out;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal-header {
+  display: flex;
+  flex-direction: row;
+  padding: 0.8rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 0.5rem;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.modal-footer {
+  position: sticky;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #f1f1f1;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.modal-footer button {
+  width: 100%;
+  background-color: green;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  border-style: none;
+}

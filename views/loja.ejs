@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery - LOJA</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/style-loja.css">
+
+</head>
+<body>
+
+    <div id="spinner-container" class="hide">
+        <div id="spinner"></div>
+    </div>
+
+    <div class="menu-nav">
+        <ul class="nav flex-nowrap">
+            <!-- <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/delivery/loja/add-produtos"><i class="bi bi-plus-square-fill"></i></a>
+            </li> -->
+            <!-- <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/delivery/pedidos?status=false"><i class="bi bi-card-list"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/delivery/loja/config"><i class="bi bi-person-circle"></i></a>
+            </li> -->
+            <h1 style="color: white; margin: 0; line-height: 0;">DELIVERY</h1>
+            <i style="color:white" class="bi bi-box-arrow-right" onclick="logout()"></i>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container-principal">
+        <h2>BEM VINDO, DONO DA LOJA!</h2>
+        <!-- <h6>TEMPO DE ESPERA: XXX(minutos)</h6>
+        <div class="tempo-de-espera">
+            <input type="number" name="tempo-de-espera" id="tempo-de-espera" placeholder="minutos">
+            <button id="btn-tempo-espera" class="btn-loja">ALTERAR TEMPO DE ESPERA</button>
+        </div> -->
+        <!-- 
+            <div class="item-container">
+            <h2 class="status-loja">SUA LANCHONETE ESTÁ ABERTA!</h2>
+        
+            <button id="btn-open-close" class="btn-loja" onclick="abrirFechar('status-loja')">FECHAR LANCHONETE</button>
+        </div>
+        <div class="item-container">
+        </div> -->
+    </div>
+
+
+    <div class="container-fluid px-4">
+        <div class="column">
+            
+            <% if(status == true){ %>
+                <div class="col-xl-3 col-md-6">
+                    <div class="card bg-success text-white mb-4">
+                        <div class="card-body">
+                            LANCONHETE ABERTA
+                        </div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            <a class="small text-white stretched-link" onclick="changeEstabelecimento()">Fechar lanchonete</a>
+                        </div>
+                    </div>
+                </div>
+            <% } else { %>
+                <div class="col-xl-3 col-md-6">
+                    <div class="card bg-danger text-white mb-4">
+                        <div class="card-body">
+                            LANCONHETE FECHADA
+                        </div>
+                        <div class="card-footer d-flex align-items-center justify-content-between">
+                            <a class="small text-white stretched-link" onclick="changeEstabelecimento()">Abrir lanchonete</a>
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+
+            <div class="col-xl-3 col-md-6">
+                <div class="card bg-secondary text-white mb-4">
+                    <div class="card-body">
+                        TEMPO DE ESPERA: <%= tempo %> (minutos)
+                    </div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-white stretched-link" onclick="toggleModalTempo()">Alterar tempo de espera</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6">
+                <div class="card bg-primary text-white mb-4">
+                    <div class="card-body">
+                        PEDIDOS
+                    </div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-white stretched-link" href="/delivery/pedidos?status=false">Ver pedidos</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6">
+                <div class="card bg-warning text-white mb-4">
+                    <div class="card-body">
+                        PRODUTOS
+                    </div>
+                    <div class="card-footer d-flex align-items-center justify-content-between">
+                        <a class="small text-white stretched-link" href="/delivery/loja/add-produtos">Ver produtos</a>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div id="modal" class="hide"></div>
+    <script src="/javascript/script-loja.js"></script>
+</body>
+</html>

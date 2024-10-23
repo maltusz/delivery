@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PEDIDOS PENDENTES</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/style-pedidos.css" />
+  </head>
+  <body>
+    <div class="header">
+      <h1>PEDIDOS</h1>
+      <a href="/delivery/loja" class="btn">VOLTAR</a>
+    </div>
+
+    <div class="navbar">
+      <a href="/delivery/pedidos?status=false" class="active">Pedidos pendentes</a>
+      <a href="/delivery/pedidos?status=true">Pedidos concluídos</a>
+    </div>
+
+    <div class="container-pedidos">
+      <% pedidos.forEach(pedido => { %>
+      <div class="pedido">
+        <div class="infos">
+          <h2>PEDIDO N°: <%= pedido.idPedido %></h2>
+          <h4>STATUS: <%= pedido.status ? 'Concluído' : 'Pendente' %></h4>
+        </div>
+        <div class="botoes">
+          <button style="background-color: rgb(70, 151, 70)" onclick="mudarStatus('<%= pedido.idPedido %>')">MUDAR STATUS</button>
+          <button style="background-color: rgb(114, 129, 0)" onclick="toggleModal('<%=pedido.idPedido%>')">DETALHES</button>
+          <button style="background-color: rgb(165, 0, 0)" onclick="imprimirPedido('<%=pedido.idPedido%>')">IMPRIMIR</button>
+        </div>
+      </div>
+      <% }); %>
+    </div>
+
+    <div id="modal" class="hide"></div>
+
+    <script src="/javascript/script-pedidos-pendentes.js"></script>
+  </body>
+</html>
